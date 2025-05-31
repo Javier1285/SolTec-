@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conoce las políticas de seguridad y privacidad de SOLTEC. Información sobre el uso de cookies, recolección de datos y protección de tu información personal.">
+  <title>Políticas de Seguridad y Privacidad - SOLTEC</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Variables y estilos generales (del diseño principal) */
+    :root {
+      --verde-oscuro: #004d40;
+      --verde-claro: #00796b;
+      --gris-fondo: #f5f5f5;
+      --blanco: #fff;
+      --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: url('fondo-textura.jpg'); /* Fondo que hemos estado usando */
+      background-color: #e0f7fa; /* Color de fallback */
+      color: #333;
+    }
+
+    /* Encabezado (del diseño principal) */
+    header {
+      background-color: var(--verde-claro);
+      text-align: center;
+      padding: 1.5em 0;
+      color: white;
+      box-shadow: var(--sombra);
+    }
+
+    .imagen {
+      height: 70px; /* Tamaño del logo del principal */
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    /* Navegación (del diseño principal) */
+    nav {
+      background-color: var(--verde-oscuro);
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .menu > li {
+      position: relative;
+    }
+
+    .menu a {
+      display: block;
+      padding: 1em;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #00695c;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #00695c;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 220px;
+      z-index: 1000;
+    }
+
+    .dropdown li a {
+      padding: 0.75em 1em;
+      display: block;
+      font-weight: normal;
+    }
+
+    .submenu:hover .dropdown {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+      }
+
+      .submenu > a::after {
+        content: " ▼";
+        font-size: 0.8em;
+      }
+
+      .submenu.active .dropdown {
+        display: block;
+      }
+    }
+
+    /* Estilos específicos para la página de políticas */
+    main {
+      padding: 2em;
+      max-width: 900px; /* Ancho ajustado para mejor lectura de texto */
+      margin: auto;
+      background-color: var(--blanco); /* Fondo blanco para el contenido */
+      border-radius: 12px;
+      box-shadow: var(--sombra);
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: var(--verde-claro);
+      text-align: center;
+      margin-bottom: 1em;
+      font-size: 2.2em;
+    }
+
+    h2 {
+      color: var(--verde-oscuro);
+      font-size: 1.6em;
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
+      color: #444;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 2em;
+      margin-bottom: 1em;
+      color: #444;
+    }
+
+    ul li {
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      color: var(--verde-claro);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pie de página (del diseño principal) */
+    footer {
+      background-color: var(--verde-claro);
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="sol.html">
+        <img class="imagen" src="logo-removebg-preview.png" alt="Logo de SOLTEC" />
+    </a>
+    <h1>Políticas de Seguridad y Privacidad - SOLTEC</h1>
+  </header>
+
+  <nav role="navigation" aria-label="Menú principal">
+    <ul class="menu">
+      <li><a href="sol.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="sol.html#buscar">Buscar productos</a>
+        <ul class="dropdown">
+          <li><a href="alarmas.html">Alarmas</a></li>
+          <li><a href="camaras.html">Cámaras de seguridad</a></li>
+          <li><a href="detectores.html">Detectores</a></li>
+          <li><a href="paneles.html">Paneles solares</a></li>
+          <li><a href="sensores.html">Sensores de movimiento</a></li>
+          <li><a href="vallas.html">Vallas eléctricas</a></li>
+          <li><a href="accesos.html">Control de accesos</a></li>
+          <li><a href="kits.html">Kits de emergencia</a></li>
+          <li><a href="cerraduras.html">Cerraduras</a></li>
+          <li><a href="plantas.html">Plantas solares</a></li>
+        </ul>
+      </li>
+      <li class="submenu">
+        <a href="conocer mas.html">Conocer más</a>
+        <ul class="dropdown">
+          <li><a href="conocer mas.html#logo-significado">Significado del logo</a></li>
+          <li><a href="conocer mas.html#descripcion">Historia</a></li>
+          <li><a href="conocer mas.html#fundadores">Fundadores</a></li>
+          <li><a href="conocer mas.html#mision">Misión</a></li>
+          <li><a href="conocer mas.html#vision">Visión</a></li>
+          <li><a href="conocer mas.html#valores">Valores</a></li>
+          <li><a href="conocer mas.html#lema-soltec">Lema</a></li>
+        </ul>
+      </li>
+      <li class="submenu">
+        <a href="#">Contacto</a>
+        <ul class="dropdown">
+          <li><a href="mailto:contacto@soltec.com">📧 contacto@soltec.com</a></li>
+          <li><a href="tel:8001234567">📞 800-123-4567</a></li>
+        </ul>
+      </li>
+      <li><a href="politicas.html">Políticas de Seguridad</a></li> </ul>
+    </ul>
+  </nav>
+
+  <main data-aos="fade-up">
+    <h2>Introducción</h2>
+    <p>En SOLTEC, la protección de tu información personal y la seguridad de tu navegación son nuestra prioridad. Esta política de seguridad y privacidad describe cómo recopilamos, usamos, protegemos y, en ciertas circunstancias, compartimos la información obtenida a través de nuestro sitio web.</p>
+    <p>Al utilizar este sitio web, aceptas las prácticas descritas en esta política. Te invitamos a leerla detenidamente.</p>
+
+    <h2>1. Uso de Cookies</h2>
+    <p>Este sitio web utiliza **cookies** para mejorar tu experiencia de usuario. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo (computadora, tablet, smartphone) cuando visitas nuestro sitio. Nos ayudan a:</p>
+    <ul>
+      <li>Recordar tus preferencias (idioma, configuración de visualización).</li>
+      <li>Analizar cómo interactúas con nuestro sitio, lo que nos permite mejorarlo.</li>
+      <li>Ofrecerte contenido y anuncios relevantes.</li>
+    </ul>
+    <p>Puedes configurar tu navegador para que te notifique la recepción de cookies o para rechazarlas, aunque esto podría afectar la funcionalidad de algunas partes de nuestro sitio. Para más detalles sobre cómo gestionar las cookies, consulta la sección de ayuda de tu navegador.</p>
+
+    <h2>2. Recopilación de Información Personal</h2>
+    <p>Recopilamos información personal solo cuando tú nos la proporcionas voluntariamente, por ejemplo, al rellenar formularios de contacto, suscribirte a boletines o realizar compras.</p>
+    <p>Los tipos de información que podemos recopilar incluyen:</p>
+    <ul>
+      <li>Nombre completo</li>
+      <li>Dirección de correo electrónico</li>
+      <li>Número de teléfono</li>
+      <li>Dirección postal (para envíos de productos)</li>
+      <li>Datos de pago (procesados de forma segura por terceros, no almacenados directamente por SOLTEC)</li>
+    </ul>
+    <p>Tu información será utilizada para los fines específicos para los que fue recopilada (ej. responder a tu consulta, procesar tu pedido, enviarte información que solicitaste).</p>
+
+    <h2>3. Protección de Datos</h2>
+    <p>En SOLTEC implementamos medidas de seguridad técnicas, administrativas y físicas para proteger tu información personal contra el acceso no autorizado, la divulgación, el uso indebido, la alteración o la destrucción.</p>
+    <ul>
+      <li>Utilizamos cifrado **SSL/TLS** para proteger la transmisión de datos sensibles a través de nuestro sitio web.</li>
+      <li>El acceso a tu información personal está restringido a nuestro personal autorizado que necesita conocerla para realizar sus funciones.</li>
+      <li>Realizamos auditorías de seguridad y actualizaciones regulares de nuestros sistemas.</li>
+    </ul>
+    <p>Aunque nos esforzamos por proteger tu información, ningún método de transmisión por internet o almacenamiento electrónico es 100% seguro. No podemos garantizar la seguridad absoluta de tus datos.</p>
+
+    <h2>4. Compartir Información con Terceros</h2>
+    <p>SOLTEC no vende, alquila ni intercambia tu información personal con terceros para fines de marketing sin tu consentimiento explícito.</p>
+    <p>Podemos compartir tu información con terceros en las siguientes circunstancias:</p>
+    <ul>
+      <li>**Proveedores de servicios:** Empresas que nos asisten en operaciones como procesamiento de pagos, envío de productos o análisis de datos. Estos terceros solo tienen acceso a la información necesaria para realizar sus funciones y están obligados a protegerla.</li>
+      <li>**Requerimiento legal:** Si la ley lo exige o si creemos de buena fe que dicha acción es necesaria para cumplir con un proceso legal, proteger nuestros derechos o propiedad, o garantizar la seguridad de nuestros usuarios o del público.</li>
+    </ul>
+
+    <h2>5. Enlaces a Sitios de Terceros</h2>
+    <p>Nuestro sitio web puede contener enlaces a sitios web de terceros. SOLTEC no es responsable de las prácticas de privacidad o el contenido de estos sitios. Te recomendamos revisar las políticas de privacidad de cualquier sitio web que visites.</p>
+
+    <h2>6. Cambios en la Política de Seguridad y Privacidad</h2>
+    <p>SOLTEC se reserva el derecho de modificar esta política en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de la última actualización. Te animamos a revisar periódicamente esta política para estar informado sobre cómo protegemos tu información.</p>
+
+    <h2>7. Tus Derechos</h2>
+    <p>Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tu información personal. Para ejercer estos derechos, por favor, contáctanos a través de:</p>
+    <ul>
+      <li>Correo electrónico: <a href="mailto:contacto@soltec.com">contacto@soltec.com</a></li>
+      <li>Teléfono: 800-123-4567</li>
+    </ul>
+    <p>Atenderemos tu solicitud de acuerdo con la legislación aplicable.</p>
+
+    <p style="text-align: right; font-size: 0.9em; color: #777;">Última actualización: 31 de mayo de 2025</p>
+  </main>
+
+  <footer>
+    &copy; 2025 SOLTEC. Todos los derechos reservados. | contacto@soltec.com | Tel: 800-123-4567
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Menú responsive (para el dropdown en pantallas pequeñas)
+    document.querySelectorAll('.submenu > a').forEach(menu => {
+      menu.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          if (this.textContent.trim() === 'Buscar productos') {
+            return;
+          }
+          e.preventDefault();
+          const parent = this.parentElement;
+          parent.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubre los Kits de Emergencia de SOLTEC: soluciones completas para tu seguridad en un solo paquete, preparadas para cualquier imprevisto.">
+  <title>Kits de Emergencia - SOLTEC</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Variables y estilos generales (del diseño principal) */
+    :root {
+      --verde-oscuro: #004d40;
+      --verde-claro: #00796b;
+      --gris-fondo: #f5f5f5;
+      --blanco: #fff;
+      --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: url('fondo-textura.jpg'); /* Fondo que hemos estado usando */
+      background-color: #e0f7fa; /* Color de fallback */
+      color: #333;
+    }
+
+    /* Encabezado (del diseño principal) */
+    header {
+      background-color: var(--verde-claro);
+      text-align: center;
+      padding: 1.5em 0;
+      color: white;
+      box-shadow: var(--sombra);
+    }
+
+    .imagen {
+      height: 70px; /* Tamaño del logo del principal */
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    /* Navegación (del diseño principal) */
+    nav {
+      background-color: var(--verde-oscuro);
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .menu > li {
+      position: relative;
+    }
+
+    .menu a {
+      display: block;
+      padding: 1em;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #00695c;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #00695c;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 220px;
+      z-index: 1000;
+    }
+
+    .dropdown li a {
+      padding: 0.75em 1em;
+      display: block;
+      font-weight: normal;
+    }
+
+    .submenu:hover .dropdown {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+      }
+
+      .submenu > a::after {
+        content: " ▼";
+        font-size: 0.8em;
+      }
+
+      .submenu.active .dropdown {
+        display: block;
+      }
+    }
+
+    /* Estilos de la sección principal de productos */
+    main {
+      padding: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      max-width: 1200px; /* Ancho máximo similar al main del index */
+      margin: auto;
+    }
+
+    h1 {
+      color: var(--verde-claro);
+      text-align: center;
+      margin-bottom: 1.5em;
+      font-size: 2.2em;
+      width: 100%; /* Para que ocupe todo el ancho antes de los productos */
+    }
+
+    .producto {
+      background-color: var(--blanco);
+      border-radius: 12px; /* Mayor radio para más suavidad */
+      box-shadow: var(--sombra);
+      padding: 1.5em; /* Mayor padding */
+      width: 320px; /* Ancho ajustado para mayor consistencia */
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto img {
+      max-width: 100%;
+      height: 200px; /* Altura fija para uniformidad */
+      object-fit: cover; /* Asegura que la imagen cubra el área */
+      border-radius: 8px; /* Radio menor para las imágenes internas */
+      margin-bottom: 1em;
+      border: 1px solid #eee; /* Borde sutil para las imágenes */
+    }
+
+    .producto h2 {
+      color: var(--verde-oscuro);
+      font-size: 1.5em;
+      margin-top: 0.5em;
+      margin-bottom: 0.8em;
+      text-align: center; /* Asegurar que el título del producto esté centrado */
+    }
+
+    .precio {
+      font-weight: bold;
+      color: #ff7043; /* Color naranja para precios */
+      font-size: 1.3em;
+      margin: 0.8em 0;
+    }
+
+    .producto p {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 1em;
+    }
+
+    .especificaciones {
+      list-style: none; /* Eliminar viñetas por defecto */
+      padding: 0;
+      margin: 1em 0;
+      text-align: left;
+    }
+
+    .especificaciones li {
+      margin-bottom: 0.5em;
+      position: relative;
+      padding-left: 1.5em;
+      color: #444;
+    }
+
+    .especificaciones li::before {
+      content: '•'; /* Un punto o check para especificaciones */
+      color: var(--verde-claro);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .comentarios {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 1em;
+      padding-top: 1em;
+      border-top: 1px dashed #eee;
+    }
+
+    .boton {
+      background-color: var(--verde-claro);
+      color: white;
+      border: none;
+      padding: 1em 1.5em;
+      margin-top: 1.5em;
+      cursor: pointer;
+      width: calc(100% - 2em); /* Ajuste para el padding de la tarjeta */
+      max-width: 250px; /* Limitar el ancho del botón */
+      border-radius: 25px; /* Botón redondeado similar al CTA */
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .boton:hover {
+      background-color: #00695c;
+    }
+
+    /* Pie de página (del diseño principal) */
+    footer {
+      background-color: var(--verde-claro);
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="sol.html">
+        <img class="imagen" src="logo-removebg-preview.png" alt="Logo de SOLTEC" />
+    </a>
+    
+  </header>
+<h1>Kits de Emergencia - Tu seguridad en un solo paquete</h1>
+  <nav role="navigation" aria-label="Menú principal">
+    <ul class="menu">
+      <li><a href="sol.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="sol.html#buscar">Buscar productos</a>
+        <ul class="dropdown">
+          <li><a href="alarmas.html">Alarmas</a></li>
+          <li><a href="camaras.html">Cámaras de seguridad</a></li>
+          <li><a href="detectores.html">Detectores</a></li>
+          <li><a href="paneles.html">Paneles solares</a></li>
+          <li><a href="sensores.html">Sensores de movimiento</a></li>
+          <li><a href="vallas.html">Vallas eléctricas</a></li>
+          <li><a href="accesos.html">Control de accesos</a></li>
+          <li><a href="kits.html">Kits de emergencia</a></li>
+          <li><a href="cerraduras.html">Cerraduras</a></li>
+          <li><a href="plantas.html">Plantas solares</a></li>
+        </ul>
+      </li>
+<li class="submenu">
+        <a href="conocer mas.html">Conocer más</a>
+        <ul class="dropdown">
+          <li><a href="conocer mas.html#logo-significado">Significado del logo</a></li>
+          <li><a href="conocer mas.html#descripcion">Historia</a></li>
+          <li><a href="conocer mas.html#fundadores">Fundadores</a></li>
+          <li><a href="conocer mas.html#mision">Misión</a></li>
+          <li><a href="conocer mas.html#vision">Visión</a></li>
+          <li><a href="conocer mas.html#valores">Valores</a></li>
+          <li><a href="conocer mas.html#lema-soltec">Lema</a></li>
+        </ul>
+      </li>
+
+      <li class="submenu">
+        <a href="#">Contacto</a>
+        <ul class="dropdown">
+          <li><a href="mailto:contacto@soltec.com">📧 contacto@soltec.com</a></li>
+          <li><a href="tel:8001234567">📞 800-123-4567</a></li>
+        </ul>
+      </li>
+      <li><a href="politicas.html">Políticas de Seguridad</a></li> </ul>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="producto" data-aos="fade-up">
+      <h2>Kit básico de emergencia</h2>
+      <img src="kit1.jpg" alt="Kit básico">
+      <p class="precio">$850 MXN</p>
+      <p>Descripción: Elementos esenciales para responder ante imprevistos menores.</p>
+      <ul class="especificaciones">
+        <li>Botiquín básico</li>
+        <li>Linterna LED</li>
+        <li>Silbato y manta térmica</li>
+      </ul>
+      <div class="comentarios">⭐️⭐️⭐️⭐️ – “Compacto y útil para el auto” – Sofía</div>
+      <button class="boton" onclick="alert('Producto agregado al carrito')">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-aos="fade-up" data-aos-delay="100">
+      <h2>Kit intermedio con herramientas</h2>
+      <img src="kit2.jpeg" alt="Kit con herramientas">
+      <p class="precio">$1,500 MXN</p>
+      <p>Descripción: Incluye elementos básicos y herramientas para emergencias domésticas.</p>
+      <ul class="especificaciones">
+        <li>Botiquín ampliado</li>
+        <li>Multiherramienta</li>
+        <li>Linterna recargable</li>
+      </ul>
+      <div class="comentarios">⭐️⭐️⭐️⭐️⭐️ – “Me salvó durante un apagón” – Jorge</div>
+      <button class="boton" onclick="alert('Producto agregado al carrito')">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-aos="fade-up" data-aos-delay="200">
+      <h2>Kit profesional completo</h2>
+      <img src="kit3.jpg" alt="Kit profesional">
+      <p class="precio">$2,800 MXN</p>
+      <p>Descripción: Ideal para empresas o casas grandes, con equipo de primeros auxilios y supervivencia.</p>
+      <ul class="especificaciones">
+        <li>Botiquín profesional</li>
+        <li>Radio de emergencia</li>
+        <li>Alimentos y agua purificada</li>
+      </ul>
+      <div class="comentarios">⭐️⭐️⭐️⭐️ – “Excelente para estar preparado” – Miriam</div>
+      <button class="boton" onclick="alert('Producto agregado al carrito')">Agregar al carrito</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 SOLTEC. Todos los derechos reservados. | contacto@soltec.com | Tel: 800-123-4567
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Menú responsive (para el dropdown en pantallas pequeñas)
+    document.querySelectorAll('.submenu > a').forEach(menu => {
+      menu.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          if (this.textContent.trim() === 'Buscar productos') {
+            return;
+          }
+          e.preventDefault();
+          const parent = this.parentElement;
+          parent.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

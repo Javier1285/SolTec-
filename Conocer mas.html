@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conoce más sobre SOLTEC: nuestra historia, misión, visión, valores, lema, fundadores y el significado de nuestro logo.">
+  <title>Conocer Más - SOLTEC</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Variables y estilos generales (del diseño principal) */
+    :root {
+      --verde-oscuro: #004d40;
+      --verde-claro: #00796b;
+      --gris-fondo: #f5f5f5;
+      --blanco: #fff;
+      --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: url('fondo-textura.jpg'); /* Fondo que hemos estado usando */
+      background-color: #e0f7fa; /* Color de fallback */
+      color: #333;
+    }
+
+    /* Encabezado (del diseño principal) */
+    header {
+      background-color: var(--verde-claro);
+      text-align: center;
+      padding: 1.5em 0;
+      color: white;
+      box-shadow: var(--sombra);
+    }
+
+    .imagen {
+      height: 70px; /* Tamaño del logo del principal */
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    /* Navegación (del diseño principal) */
+    nav {
+      background-color: var(--verde-oscuro);
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .menu > li {
+      position: relative;
+    }
+
+    .menu a {
+      display: block;
+      padding: 1em;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #00695c;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #00695c;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 220px;
+      z-index: 1000;
+    }
+
+    .dropdown li a {
+      padding: 0.75em 1em;
+      display: block;
+      font-weight: normal;
+    }
+
+    .submenu:hover .dropdown {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+      }
+
+      .submenu > a::after {
+        content: " ▼";
+        font-size: 0.8em;
+      }
+
+      .submenu.active .dropdown {
+        display: block;
+      }
+    }
+
+    /* Contenido principal de "Conocer Más" */
+    main {
+      padding: 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--verde-claro); /* Color del encabezado similar al principal */
+      margin-bottom: 1em;
+      text-align: center; /* Centrar títulos de sección */
+      font-size: 2em;
+    }
+
+    h2::before {
+      content: '>'; /* Para mantener el estilo del ">" en algunos títulos */
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin: 1em 0;
+    }
+
+    /* Estilos de las secciones de contenido */
+    .descripcion, .mision, .vision, .valores, .lema-soltec, .logo-significado, .fundadores {
+      background-color: var(--blanco);
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: var(--sombra);
+      margin-bottom: 2.5em;
+      text-align: justify; /* Justificar texto para mejor lectura */
+    }
+
+    .valores ul {
+        list-style: none; /* Eliminar viñetas por defecto */
+        padding: 0;
+    }
+
+    .valores li {
+        margin-bottom: 0.8em;
+        position: relative;
+        padding-left: 1.5em; /* Espacio para el ícono personalizado */
+    }
+
+    .valores li::before {
+        content: '✓'; /* Ícono de check */
+        color: var(--verde-claro);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    /* Sección de fundadores */
+    .fundadores h2 {
+      text-align: center;
+      color: var(--verde-oscuro);
+    }
+
+    .galeria-fundadores {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 2em;
+    }
+
+    .tarjeta-fundador {
+      background-color: #f0f8f8; /* Un color suave para las tarjetas */
+      border-radius: 10px;
+      padding: 1.5em;
+      width: 280px; /* Ancho ajustado para mejor visualización */
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .tarjeta-fundador:hover {
+        transform: translateY(-5px);
+    }
+
+    .tarjeta-fundador img {
+      width: 100%;
+      height: 200px; /* Altura fija para uniformidad */
+      object-fit: cover; /* Recortar imagen para cubrir el espacio */
+      border-radius: 8px;
+      margin-bottom: 1em;
+      border: 3px solid var(--verde-claro); /* Borde para las imágenes */
+    }
+
+    .tarjeta-fundador h3 {
+      margin: 0.5em 0;
+      color: var(--verde-oscuro);
+      font-size: 1.3em;
+    }
+
+    .cargo {
+      font-weight: bold;
+      color: var(--verde-claro);
+      margin-bottom: 0.8em;
+      font-size: 0.95em;
+    }
+
+    .descripcion-fundador { /* Cambiado de 'descripcion' para evitar conflicto */
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    /* Sección de significado del logo */
+    .logo-significado {
+      text-align: center;
+      margin: 2em auto;
+      max-width: 900px; /* Limitar ancho para que la imagen no sea excesiva */
+    }
+
+    .logo-significado img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ddd;
+    }
+
+    /* Sección Lema */
+    .lema-soltec {
+      background-color: #e6f5e6; /* Color de fondo del lema */
+      padding: 2.5em;
+      margin: 3em auto;
+      border-left: 8px solid #4CAF50; /* Borde verde fuerte */
+      max-width: 800px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .lema-soltec h2 {
+      font-size: 2.5em;
+      color: #2e7d32; /* Verde más oscuro para el lema */
+      margin-bottom: 0.5em;
+      font-style: italic;
+      text-align: center;
+    }
+    .lema-soltec h2::before {
+        content: none; /* Eliminar el ">" para el lema */
+    }
+
+    .lema-soltec p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    /* Pie de página (del diseño principal) */
+    footer {
+      background-color: var(--verde-claro);
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="sol.html">
+        <img class="imagen" src="logo-removebg-preview.png" alt="Logo de SOLTEC" />
+    </a>
+    <h1>Conoce más sobre SOLTEC</h1>
+  </header>
+
+  <nav role="navigation" aria-label="Menú principal">
+    <ul class="menu">
+      <li><a href="sol.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="sol.html#buscar">Buscar productos</a>
+        <ul class="dropdown">
+          <li><a href="alarmas.html">Alarmas</a></li>
+          <li><a href="camaras.html">Cámaras de seguridad</a></li>
+          <li><a href="detectores.html">Detectores</a></li>
+          <li><a href="paneles.html">Paneles solares</a></li>
+          <li><a href="sensores.html">Sensores de movimiento</a></li>
+          <li><a href="vallas.html">Vallas eléctricas</a></li>
+          <li><a href="accesos.html">Control de accesos</a></li>
+          <li><a href="kits.html">Kits de emergencia</a></li>
+          <li><a href="cerraduras.html">Cerraduras</a></li>
+          <li><a href="plantas.html">Plantas solares</a></li>
+        </ul>
+      </li>
+      <li class="submenu">
+        <a href="#">Conocer más</a>
+        <ul class="dropdown">
+          <li><a href="#logo-significado">Significado del logo</a></li>
+          <li><a href="#descripcion">Historia</a></li>
+          <li><a href="#fundadores">Fundadores</a></li>
+          <li><a href="#mision">Misión</a></li>
+          <li><a href="#vision">Visión</a></li>
+          <li><a href="#valores">Valores</a></li>
+          <li><a href="#lema-soltec">Lema</a></li>
+        </ul>
+      </li>
+      <li class="submenu">
+        <a href="#">Contacto</a>
+        <ul class="dropdown">
+          <li><a href="mailto:contacto@soltec.com">📧 contacto@soltec.com</a></li>
+          <li><a href="tel:8001234567">📞 800-123-4567</a></li>
+        </ul>
+      </li>
+      <li><a href="politicas.html">Políticas de Seguridad</a></li> </ul>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="descripcion" data-aos="fade-up">
+      <h2 id="descripcion">Descripción General</h2>
+      <p>SOLTEC® es una empresa comprometida con el desarrollo y la innovación en el campo de la seguridad doméstica sustentable. A través de tecnología avanzada, buscamos ofrecer soluciones eficaces para la protección de los hogares, con un enfoque hacia la sostenibilidad y el uso de energías renovables, como los paneles solares.</p>
+      <p>La razón de ser de SOLTEC® radica en la necesidad de crear productos que no solo protejan a las personas, sino que también respeten el medio ambiente, ofreciendo alternativas ecológicas que mejoren la calidad de vida de nuestros clientes.</p>
+      <p>Nuestro objetivo es transformar la forma en que las personas se sienten seguras en sus hogares, mediante soluciones tecnológicas que sean tanto efectivas como responsables con el entorno.</p>
+    </section>
+
+    <section class="mision" data-aos="fade-up">
+      <h2 id="mision">Misión</h2>
+      <p>Proveer soluciones de seguridad doméstica sustentable mediante el uso de tecnología avanzada y energías renovables, con el objetivo de ofrecer un hogar más seguro y respetuoso con el medio ambiente, mejorando la calidad de vida de nuestros clientes.</p>
+    </section>
+
+    <section class="vision" data-aos="fade-up">
+      <h2 id="vision">Visión</h2>
+      <p>Ser la empresa líder en seguridad doméstica sustentable en América Latina, reconocida por su innovación tecnológica, compromiso ambiental y su capacidad para brindar tranquilidad a las familias, mejorando su seguridad y bienestar.</p>
+    </section>
+
+    <section class="valores" data-aos="fade-up">
+      <h2 id="valores">Valores</h2>
+      <ul>
+        <li><strong>Innovación:</strong> Buscamos constantemente nuevas soluciones que mejoren la seguridad y la sostenibilidad.</li>
+        <li><strong>Compromiso con el Medio Ambiente:</strong> Todos nuestros productos están diseñados para ser ecológicos y sostenibles.</li>
+        <li><strong>Responsabilidad:</strong> Actuamos con integridad y ética, poniendo siempre a las personas y su bienestar como nuestra prioridad.</li>
+        <li><strong>Calidad:</strong> Nuestros productos están fabricados con los más altos estándares de calidad para garantizar un excelente rendimiento y durabilidad.</li>
+        <li><strong>Tranquilidad:</strong> Nos aseguramos de que nuestros clientes se sientan seguros, cómodos y protegidos con cada uno de nuestros productos.</li>
+      </ul>
+    </section>
+
+    <section class="lema-soltec" data-aos="fade-up">
+      <h2 id="lema-soltec">"Protege lo importante"</h2>
+      <p>Para SolTec® lo más importante por proteger es su gente y nuestro planeta.</p>
+    </section>
+
+    <section class="logo-significado" data-aos="fade-up">
+      <h2 id="logo-significado">Significado del Logotipo</h2>
+      <img src="significado.jpg" alt="Significado del logotipo de SOLTEC">
+    </section>
+
+    <section class="fundadores" data-aos="fade-up">
+      <h2 id="fundadores">Fundadores de SOLTEC</h2>
+      <div class="galeria-fundadores">
+
+        <div class="tarjeta-fundador">
+          <img src="Javier.jpg" alt="Javier Díaz López">
+          <h3>Javier Díaz López</h3>
+          <p class="cargo">Co-fundador</p>
+          <p class="descripcion-fundador">Experto en sistemas y desarrollo sustentable. Aporta visión tecnológica con enfoque ecológico.</p>
+        </div>
+
+        <div class="tarjeta-fundador">
+          <img src="Annyelo.jpg" alt="Annyelo Tian Mí Médina Lam">
+          <h3>Annyelo Tian Mí Médina Lam</h3>
+          <p class="cargo">Co-fundador</p>
+          <p class="descripcion-fundador">Responsable de innovación tecnológica. Diseña soluciones seguras y eficientes.</p>
+        </div>
+
+        <div class="tarjeta-fundador">
+          <img src="Jennifer Mendoza Guerrero.jpg" alt="Jennifer Mendoza Guerrero">
+          <h3>Jennifer Mendoza Guerrero</h3>
+          <p class="cargo">Co-fundadora</p>
+          <p class="descripcion-fundador">Impulsora de la visión social y ecológica. Su sensibilidad guía el espíritu de SOLTEC.</p>
+        </div>
+
+        <div class="tarjeta-fundador">
+          <img src="Nay.jpg" alt="Brittany Nayleth Juárez Hernández">
+          <h3>Brittany Nayleth Juárez Hernández</h3>
+          <p class="cargo">Co-fundadora</p>
+          <p class="descripcion-fundador">Representa el enfoque humano y comunitario que da corazón a cada proyecto.</p>
+        </div>
+
+        <div class="tarjeta-fundador">
+          <img src="Eligío.jpg" alt="Jesús Eligio Tirado Lara">
+          <h3>Jesús Eligio Tirado Lara</h3>
+          <p class="cargo">Co-fundador</p>
+          <p class="descripcion-fundador">Responsable de la estrategia operativa y técnica, haciendo que las ideas funcionen.</p>
+        </div>
+
+        <div class="tarjeta-fundador">
+          <img src="Jeny.jpg" alt="Jennifer Ornelas Pantoja">
+          <h3>Jennifer Ornelas Pantoja</h3>
+          <p class="cargo">Cofundadora ( D. E. P.)</p>
+          <p class="descripcion-fundador">Su impulso inicial fue clave para el nacimiento de SOLTEC. Siempre será parte de nuestra historia.</p>
+        </div>
+
+        <div class="tarjeta-fundador">
+          <img src="Bebé.jpg" alt="Bebé Mendoza">
+          <h3>Bebé Mendoza (por nacer)</h3>
+          <p class="cargo">Miembro honorífico</p>
+          <p class="descripcion-fundador">Acompañó a la empresa desde el vientre materno. Representa el legado y esperanza del futuro.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 SOLTEC. Todos los derechos reservados. | contacto@soltec.com | Tel: 800-123-4567
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // Duración de la animación en milisegundos
+      once: true // Si la animación debe ocurrir solo una vez al desplazarse hacia abajo
+    });
+
+    // Menú responsive (para el dropdown en pantallas pequeñas)
+    document.querySelectorAll('.submenu > a').forEach(menu => {
+      menu.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          // Si el menú es "Buscar productos" en el nav, no se abre el dropdown, solo se navega
+          if (this.textContent.trim() === 'Buscar productos') {
+            return; // No hace nada más que seguir el href
+          }
+          e.preventDefault(); // Previene la navegación por defecto solo si no es "Buscar productos"
+          const parent = this.parentElement;
+          parent.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
